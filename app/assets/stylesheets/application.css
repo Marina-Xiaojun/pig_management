@@ -1,0 +1,596 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/*全ページ余白ないように*/
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+
+/* メイン画面 */
+.main-header {
+  background-color: #88c2ef;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.main-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  gap: 20px;
+}
+
+.menu-left {
+  display: flex;
+  gap: 50px;
+}
+
+.menu-right {
+  display: flex;
+  gap: 20px;
+}
+
+.site-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #facbdb;
+ 
+}
+
+.greeting {
+  width: 500px;
+  margin: 100px auto 0;
+  padding: 30px;
+  text-align: center;
+  background-color: #ebdde8;
+  border: 1px solid #cccccc;
+  border-radius: 10px;
+}
+
+.pig-image {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
+
+.pig-image img {
+  width: 250px;
+}
+
+.notice-message {
+  text-align: center;
+  padding: 10px;
+  font-size: 24px;
+  /*固定*/
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  }
+/* メイン画面終 */
+
+
+/* 豚舎登録画面 */
+.pig-house-background {
+  background-color: #eeeeee;
+  min-height: 100vh;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+
+.pig-house-page {
+  text-align: center;
+  margin-top: 100px;
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 8px;
+  max-width: 500px;
+  margin: 100px auto;
+  padding: 30px;
+}
+
+ .pig-house-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+ }
+/* 豚舎登録画面終 */
+
+
+/* 豚舎編集画面 */
+.pig-house-background {
+  background-color: #eeeeee;
+  min-height: 100vh;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+.pig-house-page {
+  width: 600px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 30px;
+  box-sizing: border-box;
+  background-color: white;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+}
+
+.pig-house-page h1 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.pig-house-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+/* 豚舎編集画面終 */
+
+
+/* 豚舎リスト */
+.pig-house-list-background {
+  background-color: #e6f4ff;
+  min-height: 100vh;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+.pig-house-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.pig-house-actions form {
+  margin: 0;
+}
+/* 豚舎リスト終 */
+
+
+/* 出荷先一覧 */
+.destination-list-background {
+  background-color: #e6f4ff;
+  min-height: 100vh;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+.destination-page {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.destination-page h1 {
+  text-align: center;
+}
+
+.destination-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.destination-actions form {
+  margin: 0;
+}
+/* 出荷先一覧終 */
+
+/* 豚舎一覧、出荷先一覧共通削除エラーメッセージ */
+.delete-error {
+  color: #c0392b;
+  text-align: center;
+  margin-top: 20px;
+}
+/* 豚舎一覧、出荷先一覧共通削除エラーメッセージ */
+
+
+/* 出荷先編集画面 */
+.destination-background {
+  background-color: #eeeeee;
+  min-height: 100vh;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+.destination-page {
+  width: 600px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 30px;
+  box-sizing: border-box;
+  background-color: white;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+}
+
+.destination-page h1 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.destination-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+/* 出荷先編集画面終 */
+
+
+/* 初期設定のプルダウン */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-button {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  min-width: 150px;
+  background-color: white;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  padding: 6px 0;
+  z-index: 1000;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 14px;
+  color: #333333;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.dropdown-menu a:hover {
+  background-color: #eeeeee;
+}
+
+
+/*ログイン画面*/
+.welcome-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.welcome-box {
+  width: 800px;
+  max-width: 100%;
+}
+
+.welcome-pig {
+  position: relative;
+}
+
+.welcome-pig img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.welcome-buttons {
+  position: absolute;
+  bottom: 23%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+}
+
+.welcome-button {
+  display: inline-block;
+  padding: 12px 30px;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 8px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* 従業員登録ボタン */
+.register-button {
+  background-color: #F8C8DC;
+}
+
+/* ログインボタン */
+.login-button {
+  background-color: #ADD8E6;
+}
+
+
+/* ログイン画面全体 */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f3f5f2;
+}
+
+/* ログインフォームの箱 */
+.login-box {
+  width: 360px;
+  padding: 40px;
+  background-color: white;
+  border: 1px solid #ccc;
+}
+
+/* 見出し */
+.login-box h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+  font-size: 28px;
+}
+
+/* 入力欄のまとまり */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* 項目名 */
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #444;
+}
+
+/* 入力欄 */
+.form-group input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+/* ログインボタン */
+.login-submit {
+  width: 100%;
+  padding: 13px;
+  margin-top: 10px;
+  background-color: #527b4e;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.login-submit:hover {
+  background-color: #3e613b;
+}
+
+/* 従業員登録リンク */
+.register-link {
+  margin-top: 25px;
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+}
+
+.register-link a {
+  color: #527b4e;
+  font-weight: bold;
+}
+
+
+/* 新規登録画面 */
+.signup-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f3f5f2;
+}
+
+/* 新規登録フォームの箱 */
+.signup-box {
+  width: 360px;
+  padding: 40px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+}
+
+/* 新規登録ボタン */
+.signup-submit {
+  width: 100%;
+  padding: 13px;
+  margin-top: 10px;
+  background-color: #527b4e;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* ログインへのリンク */
+.signup-link {
+  margin-top: 25px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.signup-link a {
+  color: #527b4e;
+  font-weight: bold;
+}
+
+/* 導入入力画面 */
+.introduction-background {
+  background-color: #e6f4ff;
+  min-height: 100vh;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+.introduction-page {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.introduction-page h1 {
+  text-align: center;
+}
+
+.introduction-form {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  gap: 15px;
+}
+
+.introduction-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.introduction-form input,
+.introduction-form select {
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.introduction-form button {
+  padding: 9px 20px;
+  cursor: pointer;
+}
+/* 導入入力画面終 */
+
+/* 導入一覧 */
+.introduction-page table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.introduction-page th,
+.introduction-page td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: center;
+}
+
+.introduction-page th {
+  background-color: #f2f2f2;
+}
+/* 導入一覧終 */
+
+/* 出荷入力画面 */
+.shipment-background {
+  background-color: #e6f4ff;
+  min-height: 100vh;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+.shipment-page {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.shipment-page h1 {
+  text-align: center;
+}
+
+.shipment-form {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  gap: 15px;
+}
+
+.shipment-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.shipment-form input,
+.shipment-form select {
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.shipment-form button {
+  padding: 9px 20px;
+  cursor: pointer;
+}
+/* 出荷入力画面終 */
+
+/* 出荷一覧 */
+.shipment-page table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.shipment-page th,
+.shipment-page td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: center;
+}
+
+.shipment-page th {
+  background-color: #f2f2f2;
+}
+/* 出荷一覧終 */

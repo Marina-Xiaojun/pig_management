@@ -1,0 +1,35 @@
+<div class="shipment-background">
+  <div class="shipment-page">
+    <h1>出荷一覧</h1>
+
+    <table>
+      <tr>
+        <th>出荷日</th>
+        <th>豚舎</th>
+        <th>出荷先</th>
+        <th>出荷頭数</th>
+        <th>出荷時月齢</th>
+        <th>操作</th>
+      </tr>
+
+      <% @shipments.each do |shipment| %>
+        <tr>
+          <td><%= shipment.shipment_date %></td>
+          <td><%= shipment.pig_house.name %></td>
+          <td><%= shipment.destination.name %></td>
+          <td><%= shipment.head_count %>頭</td>
+          <td><%= shipment.age_months %>か月</td>
+          <td>
+            <%= button_to "削除",
+                delete_shipment_path(shipment),
+                method: :delete,
+                data: {
+                  turbo_confirm: "この出荷記録を削除しますか？"
+                } %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+
+  </div>
+</div>

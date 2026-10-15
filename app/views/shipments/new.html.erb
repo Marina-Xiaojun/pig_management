@@ -1,0 +1,44 @@
+<div class="shipment-background">
+  <div class="shipment-page">
+    <h1>出荷入力</h1>
+
+    
+    <%= form_with model: @shipment, class: "shipment-form" do |form| %>
+      <div>
+        <%= form.label :shipment_date, "出荷日" %>
+        <%= form.date_field :shipment_date,
+            min: Date.current.beginning_of_month,
+            max: Date.current.end_of_month,
+            required: true %>
+      </div>
+
+      <div>
+        <%= form.label :pig_house_id, "豚舎" %>
+        <%= form.collection_select :pig_house_id, @pig_houses, :id, :name,
+            { prompt: "豚舎を選択" }, { required: true } %>
+      </div>
+
+      <div>
+        <%= form.label :destination_id, "出荷先" %>
+        <%= form.collection_select :destination_id, @destinations, :id, :name,
+            { prompt: "出荷先を選択" }, { required: true } %>
+      </div>
+
+      <div>
+        <%= form.label :head_count, "出荷頭数" %>
+        <%= form.number_field :head_count,
+            min: 1, step: 1, placeholder: "頭数", required: true %>
+      </div>
+
+      <div>
+        <%= form.label :age_months, "出荷時月齢" %>
+        <%= form.number_field :age_months,
+            min: 0, step: 1, placeholder: "月齢", required: true %>
+      </div>
+
+      <div>
+        <%= form.submit "登録" %>
+      </div>
+    <% end %>
+  </div>
+</div>

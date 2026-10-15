@@ -1,0 +1,33 @@
+<div class="introduction-background">
+  <div class="introduction-page">
+    <h1>導入一覧</h1>
+
+    <table>
+      <tr>
+        <th>導入日</th>
+        <th>豚舎</th>
+        <th>導入頭数</th>
+        <th>導入時月齢</th>
+        <th>操作</th>
+      </tr>
+
+      <% @introductions.each do |introduction| %>
+        <tr>
+          <td><%= introduction.introduction_date %></td>
+          <td><%= introduction.pig_house.name %></td>
+          <td><%= introduction.head_count %>頭</td>
+          <td><%= introduction.age_months %>か月</td>
+          <td>
+            <%= button_to "削除",
+                delete_introduction_path(introduction),
+                method: :delete,
+                data: {
+                  turbo_confirm: "この導入記録を削除しますか？"
+                } %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+
+  </div>
+</div>

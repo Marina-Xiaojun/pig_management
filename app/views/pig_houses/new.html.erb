@@ -1,0 +1,22 @@
+<div class="pig-house-background">
+ <div class="pig-house-page">
+  <h1>豚舎登録</h1>
+
+  <% if @pig_house.errors.any? %> 
+     <ul>
+    <% @pig_house.errors.each do |error| %>
+      <p><%= error.message %></p>
+    <% end %>
+   </ul> 
+  <% end %>
+
+  <%= form_with model: @pig_house, data: { turbo: false } do |form| %>
+   <div class="pig-house-form">
+    <%= form.label :name, "豚舎名" %>
+    <%= form.text_field :name %>
+
+    <%= form.submit "登録" %>
+   </div> 
+  <% end %>
+ </div>
+</div>

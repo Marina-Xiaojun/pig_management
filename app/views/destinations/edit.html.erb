@@ -1,0 +1,21 @@
+<div class="pig-house-background">
+  <div class="pig-house-page">
+    <h1>出荷先の編集</h1>
+
+    <% if @destination.errors.any? %>
+      <ul class="error-messages">
+        <% @destination.errors.each do |error| %>
+          <p><%= error.message %></p>
+        <% end %>
+      </ul>
+    <% end %>
+
+    <%= form_with model: @destination, data: { turbo: false } do |form| %>
+      <div class="pig-house-form">
+        <%= form.label :name, "出荷先名" %>
+        <%= form.text_field :name %>
+        <%= form.submit "変更を保存" %>
+      </div>
+    <% end %>
+  </div>
+</div>

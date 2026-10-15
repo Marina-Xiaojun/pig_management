@@ -1,0 +1,18 @@
+<div class="main-page">
+
+ <div class="greeting">
+  <h1>お疲れ様です。</h1>
+  <p>今日も安全第一、労災ゼロでいきましょう。</p>
+ </div> 
+
+ <div class="pig-image">
+  <%= image_tag "メイン豚.png", alt: "メイン画面豚" %>
+ </div>
+
+ <% if notice %>
+  <div class="notice-message">
+   <p><%= notice %></p>  <%# 豚舎登録後、登録しました %>
+  </div>
+ <% end %>  
+
+ </div>

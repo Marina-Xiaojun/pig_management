@@ -1,0 +1,15 @@
+
+ja:
+  activerecord:
+    attributes:
+      employee:
+        name: "従業員名"
+        employee_id: "従業員ID"
+        password: "パスワード"
+        password_confirmation: "パスワード確認用"
+  errors:
+    messages:
+      blank: "を入力してください"
+      taken: "はすでに使われています"
+      invalid: "は半角英数字のみで入力してください"
+      confirmation: "が一致しません"

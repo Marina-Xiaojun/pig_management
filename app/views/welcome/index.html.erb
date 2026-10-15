@@ -1,0 +1,19 @@
+<div class="welcome-page">
+
+ <div class="welcome-box">
+  <div class="welcome-pig">
+    <%= image_tag "ログイン画.png", alt: "ログイン豚" %>
+  
+   <div class="welcome-buttons">
+    <%= link_to "従業員登録", "employees/new", class: "welcome-button register-button" %>
+
+    <%= link_to "ログイン", "/sessions/new", class: "welcome-button login-button" %>
+
+
+    <%# ゲストログイン機能 %>
+    <%= button_to "ゲストログイン", guest_login_path, method: :post, class: "welcome-button" %>
+   </div>
+   
+  </div> 
+
+</div>

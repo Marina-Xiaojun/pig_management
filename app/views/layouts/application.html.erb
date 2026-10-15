@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for(:title) || "Pig Management" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= yield :head %>
+
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+  <% if session[:employee_id] %>
+    <header class="main-header">
+      <%= link_to "豚の飼養管理システム", "/home/index", class: "site-title" %>
+   <nav class="main-menu">
+    <div class="menu-left">
+     <%= link_to "導入入力", introductions_new_path %>
+     <%= link_to "導入一覧", introductions_path %>
+     <%= link_to "出荷入力", shipments_new_path %>
+     <%= link_to "出荷一覧", shipments_path %>
+     <span>在籍一覧</span>
+     <span>薬品・飼料▽</span>
+    </div>
+
+        <div class="menu-right">
+          
+          <div class="dropdown">
+            <button type="button" class="dropdown-button" onclick="openMenu()">初期設定 ▾</button>
+
+            <span><%= @employee&.name %></span>
+
+            <div class="dropdown-menu" id="dropdownMenu" style="display: none;">
+              <%= link_to "豚舎登録", pig_houses_path %>
+              <%= link_to "出荷先登録", destinations_path %>
+              <%= link_to "薬品登録", "#" %>
+              <%= link_to "薬品会社登録", "#" %>
+              <%= link_to "飼料登録", "#" %>
+              <%= link_to "飼料会社登録", "#" %>
+            </div>
+          </div>
+
+          <%= button_to "ログアウト", "/sessions", method: :delete %>
+        </div>
+      </nav>
+    </header>
+   <% end %>
+
+  <%= yield %>
+  </body>
+  
+</html>

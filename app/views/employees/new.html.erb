@@ -1,0 +1,47 @@
+<div class="signup-page">
+  <div class="signup-box">
+
+    <h1>従業員登録</h1>
+
+    <%= form_with model: @employee, url: "/employees", method: :post do |form| %>
+
+    <% if @employee.errors.any? %>
+  <div class="error-messages">
+    <% @employee.errors.each do |error| %>
+      <p><%= error.full_message %></p>
+    <% end %>
+  </div>
+<% end %>
+
+      <div class="signup-form">
+        <div class="form-group">
+          <%= form.label :name, "従業員名" %>
+          <%= form.text_field :name, placeholder: "従業員名を入力" %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :employee_id, "従業員ID" %>
+          <%= form.text_field :employee_id, placeholder: "従業員IDを入力" %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :password, "パスワード" %>
+          <%= form.password_field :password, placeholder: "パスワードを入力" %>
+        </div>
+
+        <div class="form-group">
+          <%= form.label :password_confirmation, "パスワード（確認用）" %>
+          <%= form.password_field :password_confirmation, placeholder: "もう一度入力" %>
+        </div>
+
+        <%= form.submit "登録", class: "signup-submit" %>
+      </div>
+    <% end %>
+
+    <p class="signup-link">
+      すでに登録済みの方は
+      <a href="/sessions/new">ログイン</a>
+    </p>
+
+  </div>
+</div>
