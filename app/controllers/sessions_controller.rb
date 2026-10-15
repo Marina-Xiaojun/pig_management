@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
 
     if employee&.authenticate(params[:password])
       session[:employee_id] = employee.id
+      flash[:flash_type] = "login"
       redirect_to "/home/index", notice: "ログインしました"
     else
       flash.now[:alert] = "従業員IDまたはパスワードが違います"
@@ -29,6 +30,7 @@ class SessionsController < ApplicationController
     end
 
     session[:employee_id] = employee.id
+    flash[:flash_type] = "login"
     redirect_to "/home/index", notice: "ゲストとしてログインしました"
   end
 

@@ -25,7 +25,7 @@ class IntroductionsController < ApplicationController
     @introduction = Introduction.find(params[:id])
     @introduction.destroy
 
-    redirect_to introductions_path, notice: "導入記録を削除しました"
+    redirect_to introductions_path
   end
 
   private

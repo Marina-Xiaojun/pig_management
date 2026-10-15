@@ -9,10 +9,8 @@
   <%= image_tag "メイン豚.png", alt: "メイン画面豚" %>
  </div>
 
- <% if notice %>
+ <% if notice && flash[:flash_type] == "login" %>
   <div class="notice-message">
-   <p><%= notice %></p>  <%# 豚舎登録後、登録しました %>
+    <p><%= notice %></p>
   </div>
- <% end %>  
-
- </div>
+ <% end %>

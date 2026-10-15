@@ -17,7 +17,7 @@ class ShipmentsController < ApplicationController
     @shipment = Shipment.new(shipment_params)
 
     if @shipment.save
-      redirect_to shipments_path, notice: "出荷記録を登録しました"
+      redirect_to shipments_path
     else
       @pig_houses = PigHouse.all
       @destinations = Destination.all
@@ -31,7 +31,7 @@ class ShipmentsController < ApplicationController
     @shipment = Shipment.find(params[:id])
     @shipment.destroy
 
-    redirect_to shipments_path, notice: "出荷記録を削除しました"
+    redirect_to shipments_path
   end
 
   private
